@@ -1,0 +1,24 @@
+[project]
+name = "diff-tool"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Stefanig28",email = "stefanigtorres@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+]
+
+[tool.poetry]
+packages = [{include = "diff_tool", from = "src"}]
+
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.15.0"
+ruff = "^0.9.10"
+pytest = "^8.3.5"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
