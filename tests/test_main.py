@@ -21,10 +21,10 @@ from src.diff_tool.main import main
                 "Each challenge will have you writing."
             ],
             [
-                "> Helping you become a better software engineer",
                 "< Coding Challenges helps you become",
-                "> These are challenges that I’ve used",
-                "< I’ve used or am using these coding challenges"
+                "> Helping you become a better software engineer",
+                "< I’ve used or am using these coding challenges",
+                "> These are challenges that I’ve used"
             ]
         ),
         (
@@ -39,8 +39,8 @@ from src.diff_tool.main import main
                 "Line three",
             ],
             [
-                "> Line four",
-                "< Line two"
+                "< Line two",
+                "> Line four"    
             ]
         )
     ]

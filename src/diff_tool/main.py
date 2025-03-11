@@ -2,7 +2,7 @@ from pathlib import Path
 import sys
 import io
 
-def longest_common_subsequence_lines(lines1, lines2):
+def longest_common_subsequence(lines1, lines2):
     m = len(lines1)
     n = len(lines2)
 
@@ -26,10 +26,9 @@ def main(
     diff: bool = False,
     output: io.StringIO = sys.stdout,
 ) -> None:
-    string1 = file1.read_text().split("\n")
-    string2 = file2.read_text().split("\n")
-
-    lcs = longest_common_subsequence_lines(string1, string2)
+    
+    string1, string2 = file1.read_text().splitlines(), file2.read_text().splitlines()
+    lcs = longest_common_subsequence(string1, string2)
 
     if diff:
         i, j, k = 0, 0, 0
@@ -39,13 +38,12 @@ def main(
                 j += 1
                 k += 1
             elif j < len(string2) and (k >= len(lcs) or string2[j] != lcs[k]):
-                output.write(f"> {string2[j]}\n")
+                output.write(f"< {string1[j]}\n")
                 j += 1
             elif i < len(string1) and (k >= len(lcs) or string1[i] != lcs[k]):
-                output.write(f"< {string1[i]}\n")
+                output.write(f"> {string2[i]}\n")
                 i += 1
-    else:
-        output.write("\n".join(lcs) + "\n")
+
 
 def _cli() -> None:
     import argparse
